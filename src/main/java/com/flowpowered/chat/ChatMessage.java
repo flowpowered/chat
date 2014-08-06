@@ -6,9 +6,11 @@ import com.flowpowered.chat.env.Environment;
 import com.flowpowered.chat.env.EnvironmentExpression;
 import com.flowpowered.chat.env.Expression;
 import com.flowpowered.chat.env.ParentedEnvironment;
+import com.flowpowered.chat.env.expressions.ConstantString;
 
 public class ChatMessage extends ParentedEnvironment implements EnvironmentExpression {
     public static final String DEFAULT_MAIN_VAR = "main";
+    public static final String SENDER_VAR = "from";
 
     private String mainVar = DEFAULT_MAIN_VAR;
 
@@ -47,5 +49,15 @@ public class ChatMessage extends ParentedEnvironment implements EnvironmentExpre
     @Override
     public String toString() {
         return eval();
+    }
+
+    public static ChatMessage wrap(String msg) {
+        return wrap(new ConstantString(msg));
+    }
+
+    public static ChatMessage wrap(Expression main) {
+        ChatMessage msg = new ChatMessage();
+        msg.put(DEFAULT_MAIN_VAR, main);
+        return msg;
     }
 }

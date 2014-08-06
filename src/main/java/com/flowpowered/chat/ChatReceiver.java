@@ -24,13 +24,18 @@
 package com.flowpowered.chat;
 
 import com.flowpowered.commons.Named;
+
 import com.flowpowered.permissions.PermissionSubject;
 
 public interface ChatReceiver extends PermissionSubject, Named {
 
     void sendMessage(String message);
 
+    void sendMessage(ChatMessage message);
+
     void sendMessage(ChatReceiver from, String message);
+
+    void sendMessage(ChatReceiver from, ChatMessage message);
 
     void sendMessageRaw(String message, String type);
 

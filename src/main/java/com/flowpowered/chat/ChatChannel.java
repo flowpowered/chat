@@ -27,6 +27,8 @@ import java.util.Set;
 
 import com.flowpowered.commons.Named;
 
+import com.flowpowered.chat.env.expressions.ConstantString;
+
 public abstract class ChatChannel implements Named {
     public static final String MSG_TYPE_PREFIX = "chan:";
     private final String name;
@@ -47,18 +49,31 @@ public abstract class ChatChannel implements Named {
     }
 
     public void broadcast(String message) {
+        broadcast(ChatMessage.wrap(message));
+    }
+
+    public void broadcast(ChatMessage message) {
         for (ChatReceiver receiver : getReceivers()) {
             sendMessage(message, receiver);
         }
     }
 
     public void broadcast(ChatReceiver from, String message) {
-        // TODO: Once we have formats, use the sender somehow
+        broadcast(from, ChatMessage.wrap(message));
+    }
+
+    public void broadcast(ChatReceiver from, ChatMessage message) {
+        // TODO: Have some EnvironmentExpression for ChatReceiver
+        message.put(ChatMessage.SENDER_VAR, new ConstantString(from.getName()));
         broadcast(message);
     }
 
     public void sendMessage(String message, ChatReceiver to) {
-        to.sendMessageRaw(message, MSG_TYPE_PREFIX + this.name);
+        sendMessage(ChatMessage.wrap(message), to);
+    }
+
+    public void sendMessage(ChatMessage message, ChatReceiver to) {
+        to.sendMessageRaw(message.eval(), MSG_TYPE_PREFIX + this.name);
     }
 
 }
