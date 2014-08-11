@@ -17,8 +17,8 @@ Or download the [latest zip archive](https://github.com/flow/flow-chat/archive/m
 
 ## Dependencies
 We love open-source libraries! This project uses are few of them to make things easier. If you aren't using Maven or Gradle, you'll need these!
-* [com.flowpowered:flow-commons](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.flowpowered%22%20AND%20a%3A%22flow-commons%22)
-* [com.flowpowered:flow-permissions](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.flowpowered%22%20AND%20a%3A%22flow-permissions3%22)
+* [com.flowpowered:flow-commons](https://oss.sonatype.org/#nexus-search;gav~com.flowpowered~flow-commons~~~)
+* [com.flowpowered:flow-permissions](https://oss.sonatype.org/#nexus-search;gav~com.flowpowered~flow-permissions~~~)
 
 ## Building from Source
 This project can be built with the _latest_ [Java Development Kit](http://oracle.com/technetwork/java/javase/downloads) and [Maven](http://maven.apache.org/) or [Gradle](http://www.gradle.org/). Maven and Gradle are used to simplify dependency management, but using either of them is optional.
