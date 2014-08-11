@@ -28,4 +28,3 @@ env:
     # Super secure, encrypted variables! Ssssh!
     - secure: "DBXeHSR+q6lMrVSMPlaHfYiCC+51fYGWnR0Xhj+6vD05kguVzpWYmDJkApFFYQYOl4HWQWIE+nefZI8Ccs+t46obIpDBsH5bxwiG2ei4jEQTEG5OeaHYkEwYRp/36FlaIPxt6+uVZ8S9Xq06X1V14jVWLkxdsMJbGU+spvz6lLI="
     - secure: "mMQkSBQ6zzFORuLS7Ry0zJtKNlXrI//HDf4ZtszaZTMhuLRc7jbSNqkE0O+oe9R49pIikBJZbjZWcttzFdkABzJBhpqhty2NngY8qAJV1Z+cEIn4gpNtj/v/Ml1K2QD05Ug2jHMuWUPaOTWSAXLF0qY0zkjWzTGNlcSSyXm3J7U="
-
